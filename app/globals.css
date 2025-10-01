@@ -1,0 +1,161 @@
+@import "tailwindcss";
+@import "cm-chessboard/assets/chessboard.css";
+@import "chess-merida-font/css/chessmerida-webfont.css";
+
+@font-face {
+    font-family: "Chess Sans";
+    src: url("../public/chess-sans-800.9f4a2f62.woff2") format("woff2");
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Chess Glyph";
+    src: url("../public/chessglyph-v3.3e78f81f.woff2") format("woff2");
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* Tailwind CSS v4 Theme Configuration */
+@theme {
+    /* Base spacing scale */
+    --spacing: 0.25rem;
+
+    /* Typography */
+    --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+    --font-display: "Chess Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+    /* Border radius */
+    --radius: 0.5rem;
+
+    /* Mercury OS Color System */
+    --color-mercury-50: oklch(0.99 0.005 106);
+    --color-mercury-100: oklch(0.97 0.01 106);
+    --color-mercury-200: oklch(0.93 0.02 106);
+    --color-mercury-300: oklch(0.88 0.03 106);
+    --color-mercury-400: oklch(0.64 0.05 106);
+    --color-mercury-500: oklch(0.55 0.06 106);
+    --color-mercury-600: oklch(0.46 0.07 106);
+    --color-mercury-700: oklch(0.38 0.06 106);
+    --color-mercury-800: oklch(0.28 0.04 106);
+    --color-mercury-900: oklch(0.2 0.03 106);
+    --color-mercury-950: oklch(0.13 0.02 106);
+
+    /* Flow state colors */
+    --color-flow-blue: oklch(0.68 0.11 214);
+    --color-flow-purple: oklch(0.55 0.18 289);
+    --color-flow-rose: oklch(0.65 0.12 339);
+    --color-flow-sand: oklch(0.78 0.08 28);
+    --color-flow-gray: oklch(0.62 0.06 340);
+    --color-flow-slate: oklch(0.45 0.05 280);
+
+    /* Semantic colors - Light mode */
+    --color-background: oklch(0.99 0.005 106);
+    --color-foreground: oklch(0.2 0.03 106);
+    --color-card: oklch(1 0 0);
+    --color-card-foreground: oklch(0.2 0.03 106);
+    --color-popover: oklch(1 0 0);
+    --color-popover-foreground: oklch(0.2 0.03 106);
+    --color-primary: oklch(0.2 0.03 106);
+    --color-primary-foreground: oklch(0.99 0.005 106);
+    --color-secondary: oklch(0.97 0.01 106);
+    --color-secondary-foreground: oklch(0.2 0.03 106);
+    --color-muted: oklch(0.97 0.01 106);
+    --color-muted-foreground: oklch(0.55 0.06 106);
+    --color-accent: oklch(0.68 0.11 214);
+    --color-accent-foreground: oklch(0.99 0.005 106);
+    --color-destructive: oklch(0.62 0.25 27);
+    --color-destructive-foreground: oklch(0.99 0.005 106);
+    --color-border: oklch(0.93 0.02 106);
+    --color-input: oklch(0.93 0.02 106);
+    --color-ring: oklch(0.2 0.03 106);
+
+    /* Mercury specific variables */
+    --color-mercury-bg: oklch(0.99 0.005 106);
+    --color-mercury-fg: oklch(0.2 0.03 106);
+    --color-mercury-accent: oklch(0.68 0.11 214);
+    --color-mercury-accent-2: oklch(0.55 0.18 289);
+    --color-mercury-warm: oklch(0.78 0.08 28);
+    --color-mercury-surface: oklch(1 0 0);
+    --color-mercury-surface-elevated: oklch(0.995 0.003 106);
+    --color-mercury-border: oklch(0.93 0.02 106);
+    --color-mercury-border-strong: oklch(0.88 0.03 106);
+    --color-mercury-text-subtle: oklch(0.55 0.06 106);
+    --color-mercury-text-muted: oklch(0.64 0.05 106);
+    --color-mercury-shadow: oklch(0.2 0.03 106 / 0.08);
+    --color-mercury-shadow-strong: oklch(0.2 0.03 106 / 0.16);
+
+    /* Breakpoints */
+    --breakpoint-xs: 475px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1400px;
+    --breakpoint-3xl: 1920px;
+
+    /* Custom easing curves */
+    --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+    --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+    --ease-gentle: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@theme .dark {
+    /* Semantic colors - Dark mode */
+    --color-background: oklch(0.13 0.02 106);
+    --color-foreground: oklch(0.99 0.005 106);
+    --color-card: oklch(0.15 0.02 106);
+    --color-card-foreground: oklch(0.99 0.005 106);
+    --color-popover: oklch(0.15 0.02 106);
+    --color-popover-foreground: oklch(0.99 0.005 106);
+    --color-primary: oklch(0.99 0.005 106);
+    --color-primary-foreground: oklch(0.2 0.03 106);
+    --color-secondary: oklch(0.2 0.03 106);
+    --color-secondary-foreground: oklch(0.99 0.005 106);
+    --color-muted: oklch(0.2 0.03 106);
+    --color-muted-foreground: oklch(0.64 0.05 106);
+    --color-accent: oklch(0.78 0.13 214);
+    --color-accent-foreground: oklch(0.13 0.02 106);
+    --color-destructive: oklch(0.55 0.22 27);
+    --color-destructive-foreground: oklch(0.99 0.005 106);
+    --color-border: oklch(0.2 0.03 106);
+    --color-input: oklch(0.2 0.03 106);
+    --color-ring: oklch(0.85 0.08 214);
+
+    /* Mercury specific variables - Dark mode */
+    --color-mercury-bg: oklch(0.13 0.02 106);
+    --color-mercury-fg: oklch(0.99 0.005 106);
+    --color-mercury-accent: oklch(0.78 0.13 214);
+    --color-mercury-accent-2: oklch(0.65 0.22 289);
+    --color-mercury-warm: oklch(0.85 0.1 28);
+    --color-mercury-surface: oklch(0.15 0.02 106);
+    --color-mercury-surface-elevated: oklch(0.18 0.025 106);
+    --color-mercury-border: oklch(0.22 0.03 106);
+    --color-mercury-border-strong: oklch(0.28 0.04 106);
+    --color-mercury-text-subtle: oklch(0.65 0.05 106);
+    --color-mercury-text-muted: oklch(0.55 0.04 106);
+    --color-mercury-shadow: oklch(0.05 0.01 106 / 0.24);
+    --color-mercury-shadow-strong: oklch(0.05 0.01 106 / 0.48);
+}
+
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+/* Chess Glyph Font Styling */
+.chess-piece-icon {
+    font-family: "Chess Glyph", monospace;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure chess glyphs render properly */
+[style*="Chess Glyph"] {
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-rendering: optimizeLegibility;
+}
