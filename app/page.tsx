@@ -35,7 +35,7 @@ export default function Home() {
         {/* Chess Board Section */}
         <div className="col-span-3 flex gap-3 items-center justify-center min-w-0">
           {/* Evaluation Bar */}
-          <div className="flex-shrink-0 p-2 flex items-center justify-center">
+          <div className="flex-shrink-0 p-2 flex items-center justify-center h-full py-12">
             <EvaluationBar evaluation={evaluation} />
           </div>
 

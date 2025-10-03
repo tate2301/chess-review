@@ -6,6 +6,7 @@ import { DEFAULT_POSITION } from "chess.js";
 import { playMoveTypeSound } from "../lib/media";
 import { getMoveType } from "../lib/chess";
 import "./chessboard.css";
+import "gchessboard";
 
 // @ts-expect-error: no declaration file as it was written in JS
 import { Chessboard as CMChessboard } from "cm-chessboard/src/Chessboard";
@@ -44,7 +45,6 @@ export default function Chessboard() {
     };
   }, []);
 
-  // Update board orientation when settings change
   useEffect(() => {
     if (boardInstance.current) {
       boardInstance.current.setOrientation(settings.orientation);
@@ -148,15 +148,17 @@ export default function Chessboard() {
   }, [history, move, evaluation, boardInstance]);
 
   return (
-    <div
-      ref={boardRef}
-      className="chessboard-container h-full w-full"
-      style={
-        {
-          "--highlight-from-color": "rgba(255, 255, 0, 0.5)",
-          "--highlight-to-color": "rgba(0, 255, 0, 0.5)",
-        } as React.CSSProperties
-      }
-    />
+    <div>
+      <div
+        ref={boardRef}
+        className="chessboard-container h-full w-full"
+        style={
+          {
+            "--highlight-from-color": "rgba(255, 255, 0, 0.5)",
+            "--highlight-to-color": "rgba(0, 255, 0, 0.5)",
+          } as React.CSSProperties
+        }
+      />
+    </div>
   );
 }

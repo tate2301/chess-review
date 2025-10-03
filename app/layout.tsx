@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
+import { Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ChessProvider } from "../hooks/useChessStore";
 import AnimatedBackground from "../components/AnimatedBackground";
 import AnimatedFooter from "../components/AnimatedFooter";
 
-const inter = IBM_Plex_Sans({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Instrument_Sans({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",

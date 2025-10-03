@@ -139,7 +139,9 @@
 }
 
 body {
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 14px;
+    text-rendering: geometricPrecision;
 }
 
 /* Chess Glyph Font Styling */
